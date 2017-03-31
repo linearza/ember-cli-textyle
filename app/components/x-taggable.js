@@ -1,0 +1,1 @@
+export { default } from 'ember-cli-textyle/components/x-taggable';

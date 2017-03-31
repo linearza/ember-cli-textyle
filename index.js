@@ -1,6 +1,10 @@
 /* eslint-env node */
 'use strict';
 
-module.exports = {
-  name: 'ember-cli-textyle'
-};
+/*jshint node:true*/
+const EngineAddon = require('ember-engines/lib/engine-addon');
+
+module.exports = EngineAddon.extend({
+  name: 'ember-cli-textyle',
+  lazyLoading: false
+});

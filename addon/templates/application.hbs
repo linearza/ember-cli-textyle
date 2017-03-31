@@ -1,0 +1,109 @@
+
+<style>
+  .col{
+    display: inline-block;
+    width: calc(33.333% - 3px);
+    border-right: 1px solid lightgrey;
+    box-sizing: border-box;
+    vertical-align: top;
+  }
+
+  hr {
+    margin-top: 0;
+  }
+
+  .x-taggable{
+    display: block;
+  }
+
+
+</style>
+
+<div class="col">
+  Base tags
+  <hr>
+  {{#each tags as |tagObject|}}
+    {{#x-taggable tagName=tagObject.tag as |taggable| }}
+      [{{tagObject.tag}}] { }
+    {{/x-taggable}}
+  {{/each}}
+</div>
+
+
+<div class="col">
+  Base tags + classes
+  <hr>
+  {{#each tags as |tagObject|}}
+    {{#x-taggable tagName=tagObject.tag classNames=tagObject.classNames as |taggable| }}
+      [{{tagObject.tag}}] { {{tagObject.classNames}} }
+    {{/x-taggable}}
+  {{/each}}
+</div>
+
+
+<div class="col">
+  Misc tag + classes
+  <hr>
+  {{#each tags as |tagObject|}}
+    {{#x-taggable tagName=miscTag classNames=tagObject.classNames as |taggable| }}
+      [{{miscTag}}] { {{tagObject.classNames}} }
+    {{/x-taggable}}
+  {{/each}}
+</div>
+
+<br><br><br>
+
+{{!--
+
+[tag] { className | className }
+<hr>
+
+<div class="col">
+  Base tags
+  <hr>
+  <h1>[h1] {  }</h1>
+  <h2>[h2] {  }</h2>
+  <h2>[h2] {  }</h2>
+  <h3>[h3] {  }</h3>
+  <h3>[h3] {  }</h3>
+  <h4>[h4] {  }</h4>
+  <h5>[h5] {  }</h5>
+
+  <p>[p] only tag</p>
+  <small>[small] only tag</small><br>
+  <b>[b] only tag</b>
+</div>
+<div class="col">
+  Base tags with classes
+  <hr>
+  <h1 class="h1">[h1] { h1 }</h1>
+  <h2 class="h2">[h2] { h2 }</h2>
+  <h2 class="h2 -light">[h2] { h2 | -light }</h2>
+  <h3 class="h3">[h3] { h3 }</h3>
+  <h3 class="h3 -light">[h3] { h3 | -light }</h3>
+  <h3 class="h3 -stunt">[h3] { h3 | -stunt }</h3>
+  <h4 class="h4">[h4] { h4 }</h4>
+  <h5 class="h5">[h5] { h5 }</h5>
+
+  <p class="p-like">This is a [p] tag</p>
+  <small class="small-like">This is a [small] tag</small><br>
+  <b class="b-like">This is a [b] tag</b>
+</div>
+
+<div class="col">
+  Span tags with classes
+  <hr>
+  <span class="h1">[span] { .h1 } </span><br>
+  <span class="h2">[span] { .h2 }</span><br>
+  <span class="h2 -light">[span]This is H2</span><br>
+  <span class="h3">[span]This is H3</span><br>
+  <span class="h3 -light">[span]This is H3</span><br>
+  <span class="h3 -stunt">[span]This is H3</span><br>
+  <span class="h4">[span]This is H4</span><br>
+  <span class="h5">[span]This is H5</span><br>
+
+  <span class="p-like">[span]This is a p tag</span><br>
+  <span class="small-like">[span]This is a small tag</span><br>
+  <span class="b-like">[span]This is a b tag</span>
+</div>
+ --}}

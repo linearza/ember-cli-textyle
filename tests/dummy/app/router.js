@@ -7,6 +7,9 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.mount('ember-cli-textyle', {
+    path: '/'
+  });
 });
 
 export default Router;
